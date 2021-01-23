@@ -11,6 +11,7 @@
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    overflow-x: hidden;
   }
   
   /* Sections
@@ -24,11 +25,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-html {
-    font-size: 10px;
-    overflow-x: hidden;
 }
   
   body {
@@ -92,6 +88,7 @@ html {
   
   a {
     background-color: transparent;
+    transition: .3s;
   }
   
   /**

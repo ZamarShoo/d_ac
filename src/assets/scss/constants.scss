@@ -1,0 +1,113 @@
+$blackText: #121212;
+$blue: #194A97;
+$green: #38C1BF;
+
+$bgLightGreen: #B5F2FF;
+$bgLightGrey: #DFEBFF;
+$bgLightWhite: #F0F3F6;
+
+$gradient: linear-gradient(121.84deg, #2571E2 -1.08%, #21BDEE 101.08%);
+
+body {font-family: 'Roboto', sans-serif;}
+
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 12px 24px;
+    color: #FFFFFF;
+    border-radius: 4px;
+    background-color: $green;
+    cursor: pointer;
+}
+
+.btn:hover, .btn:focus {background-color: #31ACAA;}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 110%;
+  color: $blackText;
+}
+
+h2 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 120%;
+  color: $blackText;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: $blackText;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 130%;
+  color: $blackText;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $blackText;
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: $blackText;
+}
+
+p.big {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  color: $blackText;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $blackText;
+}
+
+p.small {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: $blackText;
+}
+
+li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: $blackText;
+  transition: .3s;
+}
+
+section {
+  max-width: 1242px;
+  padding: 0 21px;
+  margin: 0 auto;
+}

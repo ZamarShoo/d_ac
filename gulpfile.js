@@ -127,6 +127,9 @@ function cssWatch(cb) {
         .pipe(sass({
             includePaths: './node_modules/'
         }))
+        .pipe(autoprefixer({
+            cascade: true
+        }))
         .pipe(rename({
             suffix: ".min",
             extname: ".css"

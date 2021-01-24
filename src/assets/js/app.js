@@ -1,5 +1,6 @@
 import $ from 'jquery';
-
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel';
 
 $('.burger').click(function() {
     $(this).toggleClass('activeBurger')

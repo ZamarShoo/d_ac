@@ -1,0 +1,99 @@
+.wrapper404 {
+    background-color: #F0F3F6;
+}
+
+.page404 {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page404::before {
+    content: '';
+    display: inline-block;
+    background-image: url(../images/vectors/Vector24.png);
+    background-size: 34px;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 17vh;
+    left: 17vw;
+}
+
+.page404::after {
+    content: '';
+    display: inline-block;
+    background-image: url(../images/vectors/Vector22.png);
+    background-size: 18px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    bottom: 37vh;
+    right: 17vw;
+}
+
+.error-info {
+    text-align: center;
+
+    h3 {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 140%;
+        color: $blue;
+    }
+
+    h2 {
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 200px;
+        line-height: 234px;
+        background: linear-gradient(121.84deg, #2571E2 -1.08%, #21BDEE 101.08%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 150%;
+        color: #121212;
+        margin:0 0 20px 0;
+    }
+
+    a {
+        padding: 20px 64px;
+    }
+
+    a.btn::before {
+        content: '';
+        display: inline-block;
+        background-image: url(../images/vectors/arrow-l.png);
+        background-size: 10px;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .page404::after, .page404::before {
+        display: none;
+    }
+    .error-info {
+    
+        h3 {
+            font-size: 22px;
+        }
+    
+        h2 {
+            font-size: 100px;
+            line-height: 117px;
+        }
+    
+        p {
+            width: 240px;
+            font-size: 13px;
+        }
+    }
+}

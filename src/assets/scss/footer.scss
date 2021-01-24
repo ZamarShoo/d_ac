@@ -1,6 +1,5 @@
-@import './header.scss';
 .footer {
-    background-color: $blue;
+    background-color: #194A97;
     padding: 100px 0 20px;
 }
 
@@ -27,7 +26,7 @@
     }
 
     a:hover {
-        color: $green;
+        color: #38C1BF;
     }
 }
 
@@ -85,7 +84,7 @@
     }
 
     li a:hover {
-        color: $green;
+        color: #38C1BF;
     }
 }
 
@@ -102,7 +101,7 @@
     }
     a:first-child {width: 185px;}
     a:hover {
-        color: $green;
+        color: #38C1BF;
     }
 }
 

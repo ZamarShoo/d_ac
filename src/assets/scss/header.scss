@@ -52,11 +52,11 @@ nav > ul > li {
     padding: 20px 12.5px;
 
     a {
-        color: $blue;
+        color: #38C1BF;
     }
 
     a:hover, a:focus {
-        color: $green;
+        color: #38C1BF;
     }
 }
 
@@ -157,7 +157,7 @@ nav > ul > li {
 }
 
 .itemActive.menu::after {content: url(../images/vectors/arrow-u.png);}
-.itemActive > .menu_item > a {color: $green}
+.itemActive > .menu_item > a {color: #38C1BF}
 
 @media screen and (max-width: 1150px) {
     a.logo img {

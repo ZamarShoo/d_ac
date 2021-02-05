@@ -3,6 +3,11 @@ $('.burger').click(function() {
     $('nav').toggleClass('activeNav')
 })
 
+$('.price-head').on("click", function() {
+    $(this).toggleClass('activePrice')
+})
+
+
 $( document ).ready(function() {      
     var isMobile = window.matchMedia("only screen and (max-width: 1024px)");
 

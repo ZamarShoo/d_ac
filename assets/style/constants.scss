@@ -10,6 +10,14 @@ $gradient: linear-gradient(121.84deg, #2571E2 -1.08%, #21BDEE 101.08%);
 
 body {font-family: 'Roboto', sans-serif;}
 
+span.hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #38C1BF;
+  opacity: 0.5;
+}
+
 .btn {
     display: inline-block;
     font-weight: 500;

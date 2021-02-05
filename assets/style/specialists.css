@@ -1,0 +1,90 @@
+.specialists-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 180px;
+}
+
+.specialist {
+  width: 23%;
+  margin: 50px 1% 0;
+}
+
+.specialist h4 {
+  color: #194A97;
+  margin: 15px 0 5px;
+}
+
+.specialist p {
+  color: #121212;
+  opacity: 0.6;
+  width: 95%;
+}
+
+.specialist-img {
+  background-image: url(../images/vectors/bg-specialist.png);
+  width: 100%;
+  height: 340px;
+  background-size: cover;
+  border-radius: 6px;
+}
+
+.specialist-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 1050px) {
+  .specialist {
+    width: 31%;
+    margin: 40px 1.1% 0;
+  }
+  .specialist-img {
+    height: 300px;
+  }
+  .specialist h4 {
+    font-size: 18px;
+  }
+  .specialist p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .specialist {
+    width: 48%;
+    margin: 40px 1% 0;
+  }
+  .specialist-img {
+    height: 340px;
+  }
+  .specialists-wrapper {
+    margin-bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .specialist {
+    width: 48%;
+    margin: 40px 1% 0;
+  }
+  .specialist-img {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .specialist {
+    width: 100%;
+    margin: 40px 0 0;
+  }
+  .specialist-img {
+    height: 380px;
+  }
+}
+/*# sourceMappingURL=specialists.css.map */

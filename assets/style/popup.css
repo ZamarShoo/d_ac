@@ -50,7 +50,7 @@ input:invalid {
   border: 1px solid #FF2C2C !important;
 }
 
-.error {
+.error, .errorA {
   font-size: 13px;
   line-height: 15px;
   color: #FF2C2C;

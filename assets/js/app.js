@@ -116,3 +116,45 @@ $(function() {
        }
 	})
 })
+
+$(function() {
+	$(".aboutForm").submit(function() {
+        if($(".aboutName").val().length <=2 || $(".aboutNumber").val().length <=11 || !$('.aboutCheckbox').is(':checked')){
+            if($(".aboutName").val().length <=2) {
+                $('.aboutName').addClass('invalid');
+            }
+            if($(".aboutNumber").val().length <=11) {
+                $('.aboutNumber').addClass('invalid');
+            } 
+            if(!$('.aboutCheckbox').is(':checked')) {
+                $('.aboutCheckboxa').addClass('invalidp');
+            }
+            if($(".aboutName").val().length >2) {
+                $('.aboutName').removeClass('invalid');
+            }
+            if($(".aboutNumber").val().length >11) {
+                $('.aboutNumber').removeClass('invalid');
+            } 
+            if($('.aboutCheckbox').is(':checked')) {
+                $('.aboutCheckboxa').removeClass('invalidp');
+            }
+            $('.errorA').html('* Заполните пожалуйста все поля');
+            return false;
+        }
+       else {
+        $('.aboutNumber').removeClass('invalid');
+        $('.aboutName').removeClass('invalid');
+        $('.aboutCheckboxa').removeClass('invalidp');
+        $('.errorA').html('')
+		var a = $(".aboutForm").serialize();
+		return $.ajax({
+			url: "",
+			type: "POST",
+			data: a,
+			success: function() {
+                $('.popup-priem-thanks .popup-wrapper').show();
+			}
+		}), !1 
+       }
+	})
+})

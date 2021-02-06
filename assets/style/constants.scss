@@ -119,3 +119,9 @@ section {
   padding: 0 21px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 600px) {
+  section {
+    padding: 0 10px;
+  }
+}

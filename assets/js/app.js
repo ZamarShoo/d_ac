@@ -117,6 +117,18 @@ $(function() {
 	})
 })
 
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    dots:false,
+    nav: true,
+    items:1
+})
+
+$(document).ready(function() {
+    $('.gallery-item').magnificPopup({type:'image'});
+  });
+
 $(function() {
 	$(".aboutForm").submit(function() {
         if($(".aboutName").val().length <=2 || $(".aboutNumber").val().length <=11 || !$('.aboutCheckbox').is(':checked')){

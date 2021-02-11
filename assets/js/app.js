@@ -7,6 +7,38 @@ $('.price-head').on("click", function() {
     $(this).toggleClass('activePrice')
 })
 
+$( document ).ready(function() { 
+    let service = document.getElementById('serviceWrapper')
+    let elem1 = service.children[0]
+    let elem3 = service.children[2]
+    let elem8 = service.children[7]
+    let elem9 = service.children[8]
+    elem1.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-0"></div>`);
+    elem3.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-1"></div>`);
+    elem8.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2"></div>`);
+    elem9.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2 elem-disable-3"></div>`);
+
+})
+
+
+$( document ).ready(function() {
+
+    $('.list-services').hide()
+
+    $('#uzn').on("click", function() {
+        $('.list-services').show()
+        $(this).hide()
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(".list-services").offset().top
+        }, 700);
+    })
+
+    $('#sver').on("click", function() {
+        $('.list-services').hide()
+        $('#uzn').show()
+    })
+})
+
 
 $( document ).ready(function() {      
     var isMobile = window.matchMedia("only screen and (max-width: 1024px)");

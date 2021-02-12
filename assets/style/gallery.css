@@ -24,6 +24,8 @@
           box-shadow: 0px 0px 25px rgba(0, 25, 66, 0.2);
   border-radius: 50% !important;
   top: -350px;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .gallery-wrapper .owl-nav button span {
@@ -38,11 +40,19 @@
 
 .gallery-wrapper .owl-nav button:first-child {
   left: 40px;
+  background: rgba(255, 255, 255, 0.6) !important;
 }
 
 .gallery-wrapper .owl-nav button:first-child span {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  opacity: 0.6;
+}
+
+.gallery-wrapper .owl-nav button:first-child:hover span {
+  background-image: url(../images/vectors/arrow-x.png);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .gallery-wrapper .owl-nav button:last-child {
@@ -54,8 +64,18 @@
           transform: rotate(90deg);
 }
 
+.gallery-wrapper .owl-nav button:last-child:hover span {
+  background-image: url(../images/vectors/arrow-x.png);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
 .gallery-wrapper .owl-nav span {
   font-size: 0;
+}
+
+.gallery-wrapper .owl-nav button:hover, .gallery-wrapper .owl-nav button:focus {
+  background-color: #38C1BF !important;
 }
 
 .gallery-magnific {

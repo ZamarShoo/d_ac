@@ -24,6 +24,8 @@ $( document ).ready(function() {
 $( document ).ready(function() {
 
     $('.list-services').hide()
+    $('.sub-service-info>*').hide()
+    $('.sub-service-info>*:nth-child(1), .sub-service-info>*:nth-child(2), .sub-service-info>*:nth-child(3), .sub-service-info>*:last-child').show()
 
     $('#uzn').on("click", function() {
         $('.list-services').show()
@@ -37,6 +39,21 @@ $( document ).ready(function() {
         $('.list-services').hide()
         $('#uzn').show()
     })
+
+    $('.subLink').on("click", function() {
+        if(!$(this).hasClass('activeSubLink')) {
+            $('.sub-service-info>*').show()
+            $(this).addClass('activeSubLink')
+            $(this).html('Свернуть')
+        }
+        else {
+            $('.sub-service-info>*').hide()
+            $('.sub-service-info>*:nth-child(1), .sub-service-info>*:nth-child(2), .sub-service-info>*:nth-child(3), .sub-service-info>*:last-child').show()
+            $('.subLink').removeClass('activeSubLink')
+            $('.subLink').html('Узнать больше')
+        }
+    })
+
 })
 
 

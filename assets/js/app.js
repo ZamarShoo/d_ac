@@ -17,7 +17,13 @@ $( document ).ready(function() {
     elem3.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-1"></div>`);
     elem8.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2"></div>`);
     elem9.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2 elem-disable-3"></div>`);
+})
 
+
+$( document ).ready(function() {
+    let ind = document.getElementById('indexWrapper')
+    let elem = ind.children[0]
+    elem.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-0"></div>`);
 })
 
 
@@ -55,6 +61,62 @@ $( document ).ready(function() {
     })
 
 })
+
+$('.first-slide-gallery').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:false,
+    items:1,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    freeDrag: false
+})
+
+
+$('.gallery-about-wrapper').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:false,
+    dots: false,
+    items:1
+})
+
+
+$('.navigationUnderGallery > a:first-child').on("click", function() {
+    $('.gallery-about-wrapper').trigger('prev.owl.carousel');  
+})
+
+$('.navigationUnderGallery > a:last-child').on("click", function() {
+    $('.gallery-about-wrapper').trigger('next.owl.carousel');  
+})
+
+
+
+var s = Snap('#animated');
+var progress = s.select('#progress');
+
+animate()
+
+function animate() {
+
+    progress.attr({'stroke-dasharray': '#fff'})
+    progress.attr({strokeDasharray: '0, 251.2'});
+    Snap.animate(0,251.2, function( value ) {
+        progress.attr({ 'stroke-dasharray':value+',251.2'});
+    }, 3000,
+    function() {
+        $('.first-slide-gallery').trigger('next.owl.carousel');   
+        animate()
+    });
+        
+}
+
+$('.first-slide-gallery > .owl-dots > .owl-dot').on("click", function() {
+    progress.stop()
+    animate()
+})
+
 
 
 $( document ).ready(function() {      

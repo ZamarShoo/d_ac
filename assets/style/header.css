@@ -1,5 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 span.hr {
@@ -119,10 +120,6 @@ section {
   section {
     padding: 0 10px;
   }
-}
-
-body {
-  height: 100vh;
 }
 
 header {

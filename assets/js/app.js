@@ -61,6 +61,24 @@ $( document ).ready(function() {
     })
 
 })
+$( document ).ready(function() {
+    $('.last-section>*').hide()
+    $('.last-section>*:nth-child(1), .last-section>*:nth-child(2), .last-section>*:nth-child(3), .last-section>*:last-child').show()
+
+    $('.lastLink').on("click", function() {
+        if(!$(this).hasClass('activeiLink')) {
+            $('.last-section>*').show()
+            $(this).addClass('activeiLink')
+            $(this).html('Свернуть')
+        }
+        else {
+            $('.last-section>*').hide()
+            $('.last-section>*:nth-child(1), .last-section>*:nth-child(2), .last-section>*:nth-child(3), .last-section>*:last-child').show()
+            $(this).removeClass('activeiLink')
+            $(this).html('Узнать больше')
+        }
+    })
+})
 
 $('.first-slide-gallery').owlCarousel({
     loop:true,
@@ -70,7 +88,16 @@ $('.first-slide-gallery').owlCarousel({
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    freeDrag: false
+    freeDrag: false,
+    lazyLoad: true
+})
+
+$('.nav-act>a:first-child').on("click", function(){
+    $('.gallery-act').trigger('prev.owl.carousel');   
+})
+
+$('.nav-act>a:last-child').on("click", function(){
+    $('.gallery-act').trigger('next.owl.carousel');   
 })
 
 
@@ -79,7 +106,8 @@ $('.gallery-about-wrapper').owlCarousel({
     margin:0,
     nav:false,
     dots: false,
-    items:1
+    items:1,
+    lazyLoad: true
 })
 
 
@@ -91,32 +119,86 @@ $('.navigationUnderGallery > a:last-child').on("click", function() {
     $('.gallery-about-wrapper').trigger('next.owl.carousel');  
 })
 
-
-
-var s = Snap('#animated');
-var progress = s.select('#progress');
-
-animate()
-
-function animate() {
-
-    progress.attr({'stroke-dasharray': '#fff'})
-    progress.attr({strokeDasharray: '0, 251.2'});
-    Snap.animate(0,251.2, function( value ) {
-        progress.attr({ 'stroke-dasharray':value+',251.2'});
-    }, 3000,
-    function() {
-        $('.first-slide-gallery').trigger('next.owl.carousel');   
-        animate()
-    });
-        
-}
-
-$('.first-slide-gallery > .owl-dots > .owl-dot').on("click", function() {
-    progress.stop()
-    animate()
+$('.sticky').on("click", function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
 })
 
+const circle = document.getElementById('progress-circle')
+const r = 16
+const circumference = 2 * Math.PI * r
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`
+circle.style.strokeDashoffset = circumference
+
+let reload = false
+
+function animate(persent) {
+
+    setTimeout(function() {
+        let re = reload
+        let offset = circumference - persent / 100 * circumference
+        circle.style.strokeDashoffset = offset
+
+        if (re) {
+            circle.style.strokeDashoffset = 100
+            reload = false
+            animate(0)
+            return false
+        }
+        if(persent == 100) {
+            circle.style.strokeDashoffset = 100
+            reload = false
+            animate(0)
+            return false
+        }
+    
+        if (!re){
+            reload = false
+            animate(persent+1)
+            return false
+        } else {
+            circle.style.strokeDashoffset = 100
+            animate(0, true)
+            return false
+        }
+    }, 60)
+}
+animate(0)
+
+$('#owlNav > .next-nav').on("click", function() {
+    $('.first-slide-gallery').trigger('next.owl.carousel'); 
+    reload = true
+    animate(0)
+})
+
+
+    $('.gallery-act').owlCarousel({
+        nav:false,
+        dots:false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 10,
+                autoWidth: false
+            },
+            700: {
+                items: 2,
+                margin: 20,
+                autoWidth: false
+            },
+            1230: {
+                items: 3,
+                margin: 30,
+                autoWidth: true
+            }
+        }
+    })   
+
+$( window ).resize(function() {
+let elemL = document.getElementById('section').getBoundingClientRect().left
+document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
+})
 
 
 $( document ).ready(function() {      
@@ -270,6 +352,48 @@ $(function() {
         $('.aboutCheckboxa').removeClass('invalidp');
         $('.errorA').html('')
 		var a = $(".aboutForm").serialize();
+		return $.ajax({
+			url: "",
+			type: "POST",
+			data: a,
+			success: function() {
+                $('.popup-priem-thanks .popup-wrapper').show();
+			}
+		}), !1 
+       }
+	})
+})
+
+$(function() {
+	$(".indexForm").submit(function() {
+        if($(".indexName").val().length <=2 || $(".indexNumber").val().length <=11 || !$('.indexCheckbox').is(':checked')){
+            if($(".indexName").val().length <=2) {
+                $('.indexName').addClass('invalid');
+            }
+            if($(".indexNumber").val().length <=11) {
+                $('.indexNumber').addClass('invalid');
+            } 
+            if(!$('.indexCheckbox').is(':checked')) {
+                $('.indexCheckboxa').addClass('invalidp');
+            }
+            if($(".indexName").val().length >2) {
+                $('.indexName').removeClass('invalid');
+            }
+            if($(".indexNumber").val().length >11) {
+                $('.indexNumber').removeClass('invalid');
+            } 
+            if($('.indexCheckbox').is(':checked')) {
+                $('.indexCheckboxa').removeClass('invalidp');
+            }
+            $('.errorA').html('* Заполните пожалуйста все поля');
+            return false;
+        }
+       else {
+        $('.indexNumber').removeClass('invalid');
+        $('.indexName').removeClass('invalid');
+        $('.indexCheckboxa').removeClass('invalidp');
+        $('.errorA').html('')
+		var a = $(".indexForm").serialize();
 		return $.ajax({
 			url: "",
 			type: "POST",

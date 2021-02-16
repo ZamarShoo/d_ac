@@ -368,6 +368,7 @@ template {
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 span.hr {
@@ -492,6 +493,7 @@ section {
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 span.hr {
@@ -611,10 +613,6 @@ section {
   section {
     padding: 0 10px;
   }
-}
-
-body {
-  height: 100vh;
 }
 
 header {
@@ -1568,7 +1566,7 @@ input, textarea {
   transition: .3s;
   width: 100%;
   display: inline-block;
-  background: #F0F3F6;
+  background: #ffffff;
   border-radius: 6px;
   color: #121212;
   padding: 13px 15px;
@@ -4177,6 +4175,13 @@ button {
   width: 100%;
 }
 
+.first-slide-elem img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .first-slide-elem section {
   z-index: 2;
   position: relative;
@@ -4742,6 +4747,239 @@ svg {
   background-image: url(../images/vectors/Vector117.png);
 }
 
+.index-form-section {
+  margin: 180px auto;
+}
+
+.last-section {
+  max-width: 900px;
+}
+
+.last-section h2 {
+  max-width: 680px;
+  color: #194A97;
+}
+
+.last-section h3 {
+  color: #194A97;
+  margin-top: 50px;
+  font-size: 22px;
+}
+
+.last-section p {
+  margin-top: 30px;
+}
+
+.last-section .lastLink {
+  font-size: 16px;
+  color: #194A97;
+  margin-top: 50px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.last-section .lastLink::after {
+  position: relative;
+  margin-left: 10px;
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 6px;
+  background-size: 12px 6px;
+  background-repeat: no-repeat;
+  background-image: url(../images/vectors/arrow-ui.png);
+  top: -1px;
+}
+
+.last-section .lastLink:hover, .last-section .lastLink:focus {
+  color: #38C1BF;
+}
+
+.last-section .lastLink:hover::after, .last-section .astLink:focus::after {
+  background-image: url(../images/vectors/arrow-u.png);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.last-section .activeiLink.lastLink::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.last-section .activeiLink.lastLink:hover::after, .last-section .activeiLink.astLink:focus::after {
+  background-image: url(../images/vectors/arrow-u.png);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.act-h h2 {
+  color: #194A97;
+}
+
+.act-f {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-act a {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #38C1BF;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-left: 13px;
+}
+
+.nav-act a::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 55px;
+  content: '';
+  background-repeat: no-repeat;
+  background-size: 8px 16px;
+  background-image: url(../images/vectors/2.png);
+  background-position: center;
+}
+
+.nav-act a:first-child {
+  opacity: .6;
+}
+
+.nav-act a:first-child::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  width: 45px;
+}
+
+.nav-act a:hover, .nav-act a:focus {
+  background-color: #31ACAA;
+}
+
+.gallery-act {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.gallery-act .owl-item {
+  padding: 20px 0 !important;
+}
+
+.gallery-act article {
+  width: 580px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 25px rgba(0, 25, 66, 0.2);
+          box-shadow: 0px 0px 25px rgba(0, 25, 66, 0.2);
+  border-radius: 6px;
+}
+
+.gallery-act article img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 40px;
+}
+
+.gallery-act article h4, .gallery-act article p {
+  padding: 0 40px 0;
+}
+
+.gallery-act article p {
+  color: #38C1BF;
+  margin-bottom: 5px;
+}
+
+.gallery-act article h4 {
+  color: #194A97;
+  padding-bottom: 40px;
+}
+
+.gallery-act {
+  padding-left: 21px;
+}
+
+.main-wrapper {
+  position: relative;
+}
+
+#progress-circle {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.sticky {
+  position: absolute;
+  bottom: -50px;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 25px rgba(0, 25, 66, 0.2);
+          box-shadow: 0px 0px 25px rgba(0, 25, 66, 0.2);
+  z-index: 10;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.sticky::after {
+  content: '';
+  display: inline-block;
+  width: 50px;
+  height: 47px;
+  background-position: center;
+  background-size: 8px 16px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  background-repeat: no-repeat;
+  background-image: url(../images/vectors/1.png);
+}
+
+.sticky:hover, .sticky:focus {
+  background-color: #38C1BF;
+}
+
+.sticky:hover::after, .sticky:focus::after {
+  background-image: url(../images/vectors/2.png);
+}
+
+@media screen and (max-width: 1230px) {
+  .gallery-act article img {
+    height: 103px;
+    margin-bottom: 20px;
+    border-radius: 6px 6px 0 0;
+  }
+  .gallery-act article h4 {
+    padding-bottom: 60px;
+  }
+  .gallery-act {
+    padding: 0 21px;
+  }
+  .gallery-act article {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .about-index .about-index-r {
     top: 100px;
@@ -4861,6 +5099,15 @@ svg {
 }
 
 @media screen and (max-width: 900px) {
+  .sticky {
+    display: none;
+  }
+  .last-section h2 {
+    font-size: 30px;
+  }
+  .act-h h2 {
+    font-size: 20px;
+  }
   .first-slide-elem h1 {
     font-size: 36px;
   }
@@ -4886,6 +5133,15 @@ svg {
   #indexWrapper > article:last-child {
     width: 100%;
     height: 150px;
+  }
+  .index-form-section {
+    margin: 180px auto;
+  }
+  .last-section h3 {
+    font-size: 20px;
+  }
+  .last-section p {
+    font-size: 15px;
   }
 }
 
@@ -4960,6 +5216,12 @@ svg {
   }
   .reviews .review-elem:first-child {
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-act {
+    padding: 0 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

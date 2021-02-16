@@ -172,6 +172,17 @@ $('#owlNav > .next-nav').on("click", function() {
     animate(0)
 })
 
+$('#owlNav > .pre-nav').on("click", function() {
+    $('.first-slide-gallery').trigger('prev.owl.carousel'); 
+    reload = true
+    animate(0)
+})
+
+$('.first-slide-gallery .owl-dot').on("click", function() {
+    reload = true
+    animate(0)
+})
+
 
     $('.gallery-act').owlCarousel({
         nav:false,

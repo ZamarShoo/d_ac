@@ -1592,6 +1592,11 @@ input::placeholder, textarea::placeholder {
   color: rgba(25, 74, 151, 0.6);
 }
 
+.popup input, .popup1 input,
+.popup textarea, .popup1 textarea {
+  background: #F0F3F6;
+}
+
 .popup-close {
   position: absolute;
   top: 20px;
@@ -4180,6 +4185,9 @@ button {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .first-slide-elem section {

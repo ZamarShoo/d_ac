@@ -87,6 +87,11 @@ input, textarea {
     &::placeholder {color: rgba($color: #194A97, $alpha: 0.6);}
 }
 
+.popup input, .popup1 input,
+.popup textarea, .popup1 textarea {
+    background: #F0F3F6;
+}
+
 .popup-close {
     position: absolute;
     top: 20px;

@@ -921,6 +921,9 @@ svg{
 }
 
 @media screen and (max-width: 900px) {
+    .first-slide-index, .first-slide-elem {
+        height: 80vh;
+    }
     .sticky {
         display: none;
     }

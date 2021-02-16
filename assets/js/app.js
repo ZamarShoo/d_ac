@@ -205,7 +205,8 @@ $('.first-slide-gallery .owl-dot').on("click", function() {
             }
         }
     })   
-
+    let elemL = document.getElementById('section').getBoundingClientRect().left
+    document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
 $( window ).resize(function() {
 let elemL = document.getElementById('section').getBoundingClientRect().left
 document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
@@ -233,6 +234,10 @@ $( document ).ready(function() {
 
  $('.open-popup-priem').click(function() {
     $('.popup-wrapper, .popup-priem').show();
+})
+
+$('.btn-obr').click(function() {
+    $('.popup-wrapper, .popup-zayavk').show();
 })
 
  $(function() {

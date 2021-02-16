@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 span.hr {
@@ -123,7 +124,7 @@ section {
 }
 
 header {
-  height: 120px;
+  min-height: 120px;
 }
 
 header, .header-right {
@@ -398,7 +399,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     z-index: 2;
   }
   header {
-    height: 80px;
+    min-height: 80px;
   }
   .submenu, .under_submenu {
     display: block;

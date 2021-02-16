@@ -616,7 +616,7 @@ section {
 }
 
 header {
-  height: 120px;
+  min-height: 120px;
 }
 
 header, .header-right {
@@ -891,7 +891,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     z-index: 2;
   }
   header {
-    height: 80px;
+    min-height: 80px;
   }
   .submenu, .under_submenu {
     display: block;
@@ -1528,7 +1528,7 @@ input:invalid {
   border: 1px solid #FF2C2C !important;
 }
 
-.error, .errorA {
+.error, .errorA, .error1 {
   font-size: 13px;
   line-height: 15px;
   color: #FF2C2C;
@@ -1555,6 +1555,10 @@ input:invalid {
 .popup-priem h3, .popup-zayavk h3 {
   color: #194A97;
   margin-bottom: 30px;
+}
+
+.popup-zayavk {
+  height: 400px;
 }
 
 textarea {
@@ -1666,7 +1670,7 @@ label.checkbox input:checked + p::before {
 }
 
 @media screen and (max-width: 750px) {
-  .popup-priem {
+  .popup-priem, .popup-zayavk {
     width: 100%;
     height: 100%;
     top: 0;
@@ -1674,6 +1678,7 @@ label.checkbox input:checked + p::before {
     margin-top: 0;
     margin-left: 0;
     padding: 17vh 18px 0;
+    border-radius: 0;
   }
   .popup-priem-thanks, .popup-zayavk-thanks {
     margin-left: -300px;
@@ -5107,6 +5112,9 @@ svg {
 }
 
 @media screen and (max-width: 900px) {
+  .first-slide-index, .first-slide-elem {
+    height: 80vh;
+  }
   .sticky {
     display: none;
   }

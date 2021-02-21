@@ -150,17 +150,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 6px;
 }
 
-.price-line p, .price-dop-option--line p {
+.price-line p, .price-line pre, .price-dop-option--line p, .price-dop-option--line pre {
   font-size: 16px;
   line-height: 150%;
   color: #121212;
   margin-right: 10%;
+}
+
+.price-line pre, .price-dop-option--line pre {
+  margin-top: 10px;
 }
 
 .price-line span, .price-dop-option--line span {
@@ -168,6 +169,12 @@
   font-size: 16px;
   line-height: 130%;
   color: #121212;
+}
+
+.price-line {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .price-dop-option .price-dop-option-head {
@@ -226,7 +233,7 @@
   .price-head .right p {
     display: none !important;
   }
-  .price-line p, .price-dop-option--line p, .price-line span, .price-dop-option--line span {
+  .price-line p, .price-dop-option--line p, .price-line pre, .price-dop-option--line pre, .price-line span, .price-dop-option--line span {
     font-size: 15px;
   }
   .price-line, .price-dop-option--line {

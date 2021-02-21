@@ -323,6 +323,12 @@ svg{
     }
 }
 
+.gallery-about-wrapper article .gallery-about-r:not(*:first-child) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .gallery-about-wrapper, #navigationUnderGallery {
     article {
         display: flex;
@@ -341,7 +347,7 @@ svg{
 
         .gallery-about-r {
             background-color: #194A97;
-            padding: 120px 50px 0;
+            padding: 120px 50px;
 
             h2 {
                 color: #FFFFFF
@@ -789,6 +795,10 @@ svg{
     &::after {
         background-image: url(../images/vectors/2.png);
     }
+}
+
+.activeSlideGallery .gallery-about-r {
+    justify-content: flex-start !important;
 }
 
 @media screen and (max-width: 1230px) {

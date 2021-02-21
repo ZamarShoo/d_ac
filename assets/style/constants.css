@@ -85,7 +85,7 @@ p.big {
   color: #121212;
 }
 
-p {
+p, pre {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;

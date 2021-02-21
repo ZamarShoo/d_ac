@@ -1,34 +1,15 @@
 $('.burger').click(function() {
     $(this).toggleClass('activeBurger')
     $('nav').toggleClass('activeNav')
+    $(".header").toggleClass('activeHeader')
 })
 
 $('.price-head').on("click", function() {
     $(this).toggleClass('activePrice')
 })
 
-$( document ).ready(function() { 
-    let service = document.getElementById('serviceWrapper')
-    let elem1 = service.children[0]
-    let elem3 = service.children[2]
-    let elem8 = service.children[7]
-    let elem9 = service.children[8]
-    elem1.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-0"></div>`);
-    elem3.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-1"></div>`);
-    elem8.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2"></div>`);
-    elem9.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2 elem-disable-3"></div>`);
-})
-
-
 $( document ).ready(function() {
-    let ind = document.getElementById('indexWrapper')
-    let elem = ind.children[0]
-    elem.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-0"></div>`);
-})
-
-
-$( document ).ready(function() {
-
+    $('.gallery-about-wrapper > .owl-stage-outer > .owl-stage > .active article').addClass('activeSlideGallery')
     $('.list-services').hide()
     $('.sub-service-info>*').hide()
     $('.sub-service-info>*:nth-child(1), .sub-service-info>*:nth-child(2), .sub-service-info>*:nth-child(3), .sub-service-info>*:last-child').show()
@@ -124,109 +105,16 @@ $('.sticky').on("click", function() {
     return false;
 })
 
-const circle = document.getElementById('progress-circle')
-const r = 16
-const circumference = 2 * Math.PI * r
-
-circle.style.strokeDasharray = `${circumference} ${circumference}`
-circle.style.strokeDashoffset = circumference
-
-let reload = false
-
-function animate(persent) {
-
-    setTimeout(function() {
-        let re = reload
-        let offset = circumference - persent / 100 * circumference
-        circle.style.strokeDashoffset = offset
-
-        if (re) {
-            circle.style.strokeDashoffset = 100
-            reload = false
-            animate(0)
-            return false
-        }
-        if(persent == 100) {
-            circle.style.strokeDashoffset = 100
-            reload = false
-            animate(0)
-            return false
-        }
-    
-        if (!re){
-            reload = false
-            animate(persent+1)
-            return false
-        } else {
-            circle.style.strokeDashoffset = 100
-            animate(0, true)
-            return false
-        }
-    }, 60)
-}
-animate(0)
-
-$('#owlNav > .next-nav').on("click", function() {
-    $('.first-slide-gallery').trigger('next.owl.carousel'); 
-    reload = true
-    animate(0)
-})
-
-$('#owlNav > .pre-nav').on("click", function() {
-    $('.first-slide-gallery').trigger('prev.owl.carousel'); 
-    reload = true
-    animate(0)
-})
-
-$('.first-slide-gallery .owl-dot').on("click", function() {
-    reload = true
-    animate(0)
-})
-
-
-    $('.gallery-act').owlCarousel({
-        nav:false,
-        dots:false,
-        responsive: {
-            0: {
-                items: 1,
-                margin: 10,
-                autoWidth: false
-            },
-            700: {
-                items: 2,
-                margin: 20,
-                autoWidth: false
-            },
-            1230: {
-                items: 3,
-                margin: 30,
-                autoWidth: true
-            }
-        }
-    })   
-    let elemL = document.getElementById('section').getBoundingClientRect().left
-    document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
-$( window ).resize(function() {
-let elemL = document.getElementById('section').getBoundingClientRect().left
-document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
-})
-
-
 $( document ).ready(function() {      
     var isMobile = window.matchMedia("only screen and (max-width: 1024px)");
 
     if (isMobile.matches) {
         $('.menu>div.menu_item').click(function() {
             $(this).parent().toggleClass('itemActive')
+
         })
     }
  });
-
- function inputNumber() {
-     console.log("eee")
-     
- }
 
  $('.popup-close').click(function() {
      $('.popup-wrapper, .popup-priem, .popup-zayavk, .popup-priem-thanks, .popup-zayavk-thanks').hide();
@@ -326,7 +214,7 @@ $(function() {
 	})
 })
 
-$('.owl-carousel').owlCarousel({
+$('.gallery-wrapper').owlCarousel({
     loop:true,
     margin:10,
     dots:false,
@@ -336,6 +224,7 @@ $('.owl-carousel').owlCarousel({
 
 $(document).ready(function() {
     $('.gallery-item').magnificPopup({type:'image'});
+    $('.diplom-elem>a').magnificPopup({type:'image'});
   });
 
 $(function() {
@@ -420,4 +309,94 @@ $(function() {
 		}), !1 
        }
 	})
+})
+
+$(document).ready(function(){
+    function animate() {
+        var path = document.getElementById('progress-circle');
+        var length = path.getTotalLength();
+        // Clear any previous transition
+        path.style.transition = path.style.WebkitTransition = 'none';
+        // Set up the starting positions
+        path.style.strokeDasharray = length + ' ' + length;
+        path.style.strokeDashoffset = length;
+        // Trigger a layout so styles are calculated & the browser
+        // picks up the starting position before animating
+        path.getBoundingClientRect();
+        // Define our transition
+        path.style.transition = path.style.WebkitTransition =
+        'stroke-dashoffset 5s linear';
+        // Go!
+        path.style.strokeDashoffset = '0';
+    }
+    let timerId = null
+    function startAnimate() {
+        animate() 
+        timerId = setInterval(function() {
+            animate() 
+            $('.first-slide-gallery').trigger('next.owl.carousel'); 
+        }, 5000);
+    }
+
+    startAnimate()
+    
+    $('#owlNav > .next-nav').on("click", function() {
+        $('.first-slide-gallery').trigger('next.owl.carousel'); 
+        setTimeout(() => { clearInterval(timerId); }, 0);
+        startAnimate()
+    })
+    
+    $('#owlNav > .pre-nav').on("click", function() {
+        $('.first-slide-gallery').trigger('prev.owl.carousel'); 
+        setTimeout(() => { clearInterval(timerId); }, 0);
+        startAnimate()
+    })
+    
+    $('.first-slide-gallery .owl-dot').on("click", function() {
+        setTimeout(() => { clearInterval(timerId); }, 0);
+        startAnimate()
+    })
+    
+    
+    $( document ).ready(function() {
+        let ind = document.getElementById('indexWrapper')
+        let elem = ind.children[0]
+        elem.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-0"></div>`);
+    
+        let elem4 = ind.children[3]
+        let elem6 = ind.children[6]
+        elem4.insertAdjacentElement("afterend", elem6)
+        let elem5 = ind.children[5]
+        elem6 = ind.children[6]
+        elem6.insertAdjacentElement("afterend", elem5)
+    
+    })
+    
+    $('.gallery-act').owlCarousel({
+        nav:false,
+        dots:false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 10,
+                autoWidth: false
+            },
+            700: {
+                items: 2,
+                margin: 20,
+                autoWidth: false
+            },
+            1230: {
+                items: 3,
+                margin: 30,
+                autoWidth: true
+            }
+        }
+    })   
+    let elemL = document.getElementById('section').getBoundingClientRect().left
+    document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
+    $( window ).resize(function() {
+    let elemL = document.getElementById('section').getBoundingClientRect().left
+    document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
+    })
 })

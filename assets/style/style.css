@@ -179,6 +179,9 @@ textarea {
   /* 1 */
   margin: 0;
   /* 2 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 
 a {
@@ -452,7 +455,7 @@ p.big {
   color: #121212;
 }
 
-p {
+p, pre {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -577,7 +580,7 @@ p.big {
   color: #121212;
 }
 
-p {
+p, pre {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -637,6 +640,10 @@ a.logo img {
   width: 298px;
 }
 
+a.logo img:last-child {
+  display: none;
+}
+
 nav > ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -651,6 +658,8 @@ nav > ul {
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .number {
@@ -662,7 +671,7 @@ nav > ul {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 15px;
   color: #121212;
 }
@@ -711,11 +720,12 @@ nav > ul > li a:hover, nav > ul > li a:focus {
 }
 
 .activeNav {
-  min-height: 100vh;
+  height: 100vh;
   background-color: #F0F3F6;
   z-index: 2;
   padding-top: 10vh;
-  padding-bottom: 5vh;
+  padding-bottom: 20vh;
+  overflow-y: scroll;
 }
 
 .activeNav ul {
@@ -730,6 +740,12 @@ nav > ul > li a:hover, nav > ul > li a:focus {
   margin: 0 21px;
   border-bottom: 1px solid rgba(18, 18, 18, 0.1);
   font-size: 15px;
+}
+
+.activeHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .submenu, .under_submenu {
@@ -837,6 +853,10 @@ nav > ul > li a:hover, nav > ul > li a:focus {
 }
 
 @media screen and (max-width: 1024px) {
+  .submenu1 {
+    margin-top: -30px;
+    margin-bottom: 10px;
+  }
   .itemActive > .submenu, .itemActive > .submenu1 {
     display: block;
   }
@@ -852,7 +872,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     -webkit-transition: .3s;
     transition: .3s;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     display: block;
     top: 80px;
     left: 0;
@@ -917,6 +937,10 @@ nav > ul > li a:hover, nav > ul > li a:focus {
   .menu {
     position: relative;
     margin-right: 0;
+    padding: 0 !important;
+  }
+  .menu_item {
+    padding: 15px 0 !important;
   }
   .menu::after {
     content: url(../images/vectors/arrow-d.png);
@@ -935,6 +959,12 @@ nav > ul > li a:hover, nav > ul > li a:focus {
 @media screen and (max-width: 600px) {
   a.logo img {
     width: 170px;
+  }
+  a.logo img:first-child {
+    display: none;
+  }
+  a.logo img:last-child {
+    display: block;
   }
   .numbers {
     width: 104vw;
@@ -1372,7 +1402,8 @@ h2.up {
   font-size: 16px;
   line-height: 150%;
   color: #121212;
-  margin: 10px 0 50px;
+  margin: 10px 0 0px;
+  min-height: 50px;
 }
 
 .contacts-about-elem .img-about {
@@ -1851,17 +1882,18 @@ label.checkbox input:checked + p::before {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 6px;
 }
 
-.price-line p, .price-dop-option--line p {
+.price-line p, .price-line pre, .price-dop-option--line p, .price-dop-option--line pre {
   font-size: 16px;
   line-height: 150%;
   color: #121212;
   margin-right: 10%;
+}
+
+.price-line pre, .price-dop-option--line pre {
+  margin-top: 10px;
 }
 
 .price-line span, .price-dop-option--line span {
@@ -1869,6 +1901,12 @@ label.checkbox input:checked + p::before {
   font-size: 16px;
   line-height: 130%;
   color: #121212;
+}
+
+.price-line {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .price-dop-option .price-dop-option-head {
@@ -1927,7 +1965,7 @@ label.checkbox input:checked + p::before {
   .price-head .right p {
     display: none !important;
   }
-  .price-line p, .price-dop-option--line p, .price-line span, .price-dop-option--line span {
+  .price-line p, .price-dop-option--line p, .price-line pre, .price-dop-option--line pre, .price-line span, .price-dop-option--line span {
     font-size: 15px;
   }
   .price-line, .price-dop-option--line {
@@ -2574,7 +2612,7 @@ label.checkbox input:checked + p::before {
 @media screen and (max-width: 600px) {
   .about-img {
     margin-left: -21px;
-    width: 100vw;
+    width: 102vw;
   }
   .about-slide_0 > section {
     -webkit-box-orient: vertical;
@@ -2944,7 +2982,7 @@ label.checkbox input:checked + p::before {
   font-size: 0;
 }
 
-.gallery-wrapper .owl-nav button:hover, .gallery-wrapper .owl-nav button:focus {
+.gallery-wrapper .owl-nav button:hover {
   background-color: #38C1BF !important;
 }
 
@@ -3491,7 +3529,7 @@ label.checkbox input:checked + p::before {
     max-width: 640px;
   }
   .text-r .right-text p {
-    width: 25%;
+    white-space: nowrap;
   }
 }
 
@@ -3548,6 +3586,9 @@ label.checkbox input:checked + p::before {
 @media screen and (max-width: 900px) {
   .service-elem {
     width: 49.6%;
+  }
+  .text-r .right-text p, .right-text p {
+    font-size: 14px;
   }
 }
 
@@ -4057,7 +4098,7 @@ label.checkbox input:checked + p::before {
     font-size: 15px;
   }
   .sub-service-slide {
-    margin-bottom: 185px;
+    margin-bottom: 85px;
   }
   .sub-service-info {
     margin-bottom: 80px;
@@ -4122,9 +4163,6 @@ label.checkbox input:checked + p::before {
   .btn-wrapper a {
     display: block;
     text-align: center;
-  }
-  .sub-service-slide img {
-    display: none;
   }
 }
 
@@ -4467,6 +4505,19 @@ svg {
   background-image: url(../images/vectors/Vector117.png);
 }
 
+.gallery-about-wrapper article .gallery-about-r:not(*:first-child) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .gallery-about-wrapper article, #navigationUnderGallery article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4490,7 +4541,7 @@ svg {
 
 .gallery-about-wrapper article .gallery-about-r, #navigationUnderGallery article .gallery-about-r {
   background-color: #194A97;
-  padding: 120px 50px 0;
+  padding: 120px 50px;
 }
 
 .gallery-about-wrapper article .gallery-about-r h2, #navigationUnderGallery article .gallery-about-r h2 {
@@ -4974,6 +5025,12 @@ svg {
 
 .sticky:hover::after, .sticky:focus::after {
   background-image: url(../images/vectors/2.png);
+}
+
+.activeSlideGallery .gallery-about-r {
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
 }
 
 @media screen and (max-width: 1230px) {

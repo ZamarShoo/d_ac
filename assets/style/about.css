@@ -399,7 +399,7 @@
 @media screen and (max-width: 600px) {
   .about-img {
     margin-left: -21px;
-    width: 100vw;
+    width: 102vw;
   }
   .about-slide_0 > section {
     -webkit-box-orient: vertical;

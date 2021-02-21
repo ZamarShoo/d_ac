@@ -391,7 +391,7 @@
     .text-r .right-text {
         max-width: 640px;
         p {
-            width: 25%;
+            white-space: nowrap;
         }
     }
 }
@@ -450,6 +450,7 @@
 
 @media screen and (max-width: 900px) {
     .service-elem {width: 49.6%;}
+    .text-r .right-text p, .right-text p {font-size: 14px;}
 }
 
 @media screen and (max-width: 850px) {

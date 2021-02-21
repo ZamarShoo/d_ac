@@ -119,14 +119,17 @@
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     border-radius: 6px;
 
-    p {
+    p, pre {
         font-size: 16px;
         line-height: 150%;
         color: #121212;
         margin-right: 10%;
+    }
+
+    pre {
+        margin-top: 10px;
     }
 
     span {
@@ -135,6 +138,10 @@
         line-height: 130%;
         color: #121212;
     }
+}
+
+.price-line {
+    align-items: center;
 }
 
 .price-dop-option .price-dop-option-head {
@@ -172,7 +179,7 @@
     .price-head {padding: 20px 10px}
     .price-head h4 { font-size: 18px; }
     .price-head .right p {display: none !important;}
-    .price-line p, .price-dop-option--line p, .price-line span, .price-dop-option--line span {font-size: 15px;}
+    .price-line p, .price-dop-option--line p, .price-line pre, .price-dop-option--line pre, .price-line span, .price-dop-option--line span {font-size: 15px;}
     .price-line, .price-dop-option--line {padding: 10px;}
     .price-dop-option-head {margin-top: 40px;}
     .activePrice + .price-body {padding-bottom: 80px;}

@@ -74,7 +74,7 @@
   font-size: 0;
 }
 
-.gallery-wrapper .owl-nav button:hover, .gallery-wrapper .owl-nav button:focus {
+.gallery-wrapper .owl-nav button:hover {
   background-color: #38C1BF !important;
 }
 

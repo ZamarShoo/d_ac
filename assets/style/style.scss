@@ -797,8 +797,9 @@ svg{
     }
 }
 
-.activeSlideGallery .gallery-about-r {
-    justify-content: flex-start !important;
+.activeSlideGallery .gallery-about-r h2 {
+    position: absolute !important;
+    top: 20%;
 }
 
 @media screen and (max-width: 1230px) {
@@ -972,7 +973,10 @@ svg{
         height: 150px;
     }
     .index-form-section {
-        margin: 180px auto;
+        margin: 120px auto 0;
+    }
+    .about-form {
+        margin-bottom: 120px;
     }
     .last-section {
     
@@ -984,9 +988,18 @@ svg{
             font-size: 15px;
         }
     }
+    .activeSlideGallery .gallery-about-r {
+        position: relative;
+    }
+    .activeSlideGallery .gallery-about-r h2 {
+        top: 7%;
+    }
 }
 
 @media screen and (max-width: 650px) {
+    .activeSlideGallery .gallery-about-r h2 {
+        top: 15%;
+    }
     .about-index-r {
         position: relative !important;
         margin: 0 auto !important;
@@ -1059,5 +1072,35 @@ svg{
 @media screen and (max-width: 600px) {
     .gallery-act {
         padding: 0 10px;
+    }
+    .social {
+        margin-right: 15px;
+    }
+    svg {
+        display: none;
+    }
+    .first-slide-index .owl-dots {
+        justify-content: flex-start;
+        margin-left: 10px;
+        bottom: 15px;
+    }
+    #owlNav {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+    }
+    .act-f {
+        flex-direction: column-reverse;
+
+        .nav-act {
+            margin-bottom: 40px;
+            margin-top: -30px;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .activeSlideGallery .gallery-about-r h2 {
+        top: 5%;
     }
 }

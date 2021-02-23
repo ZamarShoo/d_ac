@@ -203,6 +203,9 @@
 }
 
 @media screen and (max-width: 950px) {
+    .sub-service-slide {
+        margin-bottom: 200px;
+    }
     .btn-wrapper {
         position: absolute;
         bottom: -80px;
@@ -221,9 +224,6 @@
     }
     .sub-serv-body li a {
         font-size: 15px;
-    }
-    .sub-service-slide {
-        margin-bottom: 85px;
     }
     .sub-service-info {
         margin-bottom: 80px;
@@ -275,6 +275,10 @@
 @media screen and (max-width: 550px) {
     .sub-service-slide .blog-info {
         margin-left: 0;
+        margin-bottom: 40px;
+    }
+    .sub-service-slide {
+        margin-bottom: 80px;
     }
     .sub-final .sub-final-item {
         height: 260px;

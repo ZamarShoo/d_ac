@@ -9,7 +9,6 @@ $('.price-head').on("click", function() {
 })
 
 $( document ).ready(function() {
-    $('.gallery-about-wrapper > .owl-stage-outer > .owl-stage > .active article').addClass('activeSlideGallery')
     $('.list-services').hide()
     $('.sub-service-info>*').hide()
     $('.sub-service-info>*:nth-child(1), .sub-service-info>*:nth-child(2), .sub-service-info>*:nth-child(3), .sub-service-info>*:last-child').show()

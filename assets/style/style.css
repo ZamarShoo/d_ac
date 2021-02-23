@@ -2612,7 +2612,7 @@ label.checkbox input:checked + p::before {
 @media screen and (max-width: 600px) {
   .about-img {
     margin-left: -21px;
-    width: 102vw;
+    width: 105vw;
   }
   .about-slide_0 > section {
     -webkit-box-orient: vertical;
@@ -4078,6 +4078,9 @@ label.checkbox input:checked + p::before {
 }
 
 @media screen and (max-width: 950px) {
+  .sub-service-slide {
+    margin-bottom: 200px;
+  }
   .btn-wrapper {
     position: absolute;
     bottom: -80px;
@@ -4096,9 +4099,6 @@ label.checkbox input:checked + p::before {
   }
   .sub-serv-body li a {
     font-size: 15px;
-  }
-  .sub-service-slide {
-    margin-bottom: 85px;
   }
   .sub-service-info {
     margin-bottom: 80px;
@@ -4148,6 +4148,10 @@ label.checkbox input:checked + p::before {
 @media screen and (max-width: 550px) {
   .sub-service-slide .blog-info {
     margin-left: 0;
+    margin-bottom: 40px;
+  }
+  .sub-service-slide {
+    margin-bottom: 80px;
   }
   .sub-final .sub-final-item {
     height: 260px;
@@ -5027,10 +5031,9 @@ svg {
   background-image: url(../images/vectors/2.png);
 }
 
-.activeSlideGallery .gallery-about-r {
-  -webkit-box-pack: start !important;
-      -ms-flex-pack: start !important;
-          justify-content: flex-start !important;
+.activeSlideGallery .gallery-about-r h2 {
+  position: absolute !important;
+  top: 20%;
 }
 
 @media screen and (max-width: 1230px) {
@@ -5208,7 +5211,10 @@ svg {
     height: 150px;
   }
   .index-form-section {
-    margin: 180px auto;
+    margin: 120px auto 0;
+  }
+  .about-form {
+    margin-bottom: 120px;
   }
   .last-section h3 {
     font-size: 20px;
@@ -5216,9 +5222,18 @@ svg {
   .last-section p {
     font-size: 15px;
   }
+  .activeSlideGallery .gallery-about-r {
+    position: relative;
+  }
+  .activeSlideGallery .gallery-about-r h2 {
+    top: 7%;
+  }
 }
 
 @media screen and (max-width: 650px) {
+  .activeSlideGallery .gallery-about-r h2 {
+    top: 15%;
+  }
   .about-index-r {
     position: relative !important;
     margin: 0 auto !important;
@@ -5295,6 +5310,40 @@ svg {
 @media screen and (max-width: 600px) {
   .gallery-act {
     padding: 0 10px;
+  }
+  .social {
+    margin-right: 15px;
+  }
+  svg {
+    display: none;
+  }
+  .first-slide-index .owl-dots {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 10px;
+    bottom: 15px;
+  }
+  #owlNav {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+  }
+  .act-f {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .act-f .nav-act {
+    margin-bottom: 40px;
+    margin-top: -30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .activeSlideGallery .gallery-about-r h2 {
+    top: 5%;
   }
 }
 /*# sourceMappingURL=style.css.map */

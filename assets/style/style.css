@@ -3206,9 +3206,9 @@ label.checkbox input:checked + p::before {
   color: #194A97;
   font-weight: 500;
   font-size: 18px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3231,21 +3231,21 @@ label.checkbox input:checked + p::before {
   margin-top: 28px;
 }
 
-.service-elem:hover, .service-elem:focus, .service-elem:active {
+.service-elemActive {
   z-index: 3;
 }
 
-.service-elem:hover div, .service-elem:focus div, .service-elem:active div {
+.service-elemActive div {
   background: linear-gradient(121.84deg, #2571E2 -1.08%, #21BDEE 101.08%) !important;
   min-height: 100%;
   height: auto;
 }
 
-.service-elem:hover div > a, .service-elem:focus div > a, .service-elem:active div > a {
+.service-elemActive div > a {
   color: #FFFFFF;
 }
 
-.service-elem:hover div ul, .service-elem:focus div ul, .service-elem:active div ul {
+.service-elemActive div ul {
   opacity: 1;
 }
 

@@ -337,23 +337,23 @@ $(document).ready(function(){
         }, 5000);
     }
 
-    startAnimate()
+    startAnimate();
     
     $('#owlNav > .next-nav').on("click", function() {
         $('.first-slide-gallery').trigger('next.owl.carousel'); 
-        setTimeout(() => { clearInterval(timerId); }, 0);
-        startAnimate()
+        clearInterval(timerId);
+        startAnimate();
     })
     
     $('#owlNav > .pre-nav').on("click", function() {
         $('.first-slide-gallery').trigger('prev.owl.carousel'); 
-        setTimeout(() => { clearInterval(timerId); }, 0);
-        startAnimate()
+        clearInterval(timerId);
+        startAnimate();
     })
     
     $('.first-slide-gallery .owl-dot').on("click", function() {
-        setTimeout(() => { clearInterval(timerId); }, 0);
-        startAnimate()
+        clearInterval(timerId);
+        startAnimate();
     })
     
     
@@ -398,4 +398,5 @@ $(document).ready(function(){
     let elemL = document.getElementById('section').getBoundingClientRect().left
     document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
     })
+    
 })

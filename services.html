@@ -660,25 +660,27 @@
     elem8.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2"></div>`);
     elem9.insertAdjacentHTML("afterEnd", `<div class="service-elem elem-disable elem-disable-2 elem-disable-3"></div>`);
 
-    var isMobile = window.matchMedia("only screen and (max-width: 1024px)");
-        
-        if (isMobile.matches) {
-            let elem7 = service.children[7]
-            console.log(elem7)
-            elem3 = service.children[3]
+    var isMobile = $( window ).width() 
+        let elem7 = service.children[7]
+        elem3 = service.children[3]
+        if (isMobile <= 600) {
             elem3.insertAdjacentElement("afterend", elem7)
         }
     $(window).resize(function() {
-        
-        if (isMobile.matches) {
-            let elem7 = service.children[7]
-            console.log(elem7)
-            elem3 = service.children[3]
+        var isMobile = $( window ).width() 
+        if (isMobile <= 600) {
             elem3.insertAdjacentElement("afterend", elem7)
         }
 	});
 })
-
+<script>
+    $('.service-elem>div').on('mouseover', function() {
+        $(this).parent().addClass('service-elemActive')
+    })
+    $('.service-elem>div').on('mouseout touchend', function() {
+        $(this).parent().removeClass('service-elemActive')
+    })
+</script>
 </script>
 <script src="./assets/js/app.js"></script>
 </body>

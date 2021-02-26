@@ -93,6 +93,10 @@ p, pre {
   color: #121212;
 }
 
+pre {
+  white-space: break-spaces;
+}
+
 p.small {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -427,6 +431,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     border-radius: 0px;
     margin-top: 0px;
     position: relative;
+    width: 100%;
   }
   .submenu ul > li, .under_submenu ul > li {
     padding-bottom: 0px;

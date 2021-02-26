@@ -97,6 +97,10 @@ p, pre {
   color: $blackText;
 }
 
+pre {
+  white-space: break-spaces;
+}
+
 p.small {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;

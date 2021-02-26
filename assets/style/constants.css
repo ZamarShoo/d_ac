@@ -93,6 +93,10 @@ p, pre {
   color: #121212;
 }
 
+pre {
+  white-space: break-spaces;
+}
+
 p.small {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;

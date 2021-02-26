@@ -463,6 +463,10 @@ p, pre {
   color: #121212;
 }
 
+pre {
+  white-space: break-spaces;
+}
+
 p.small {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -586,6 +590,10 @@ p, pre {
   font-size: 16px;
   line-height: 150%;
   color: #121212;
+}
+
+pre {
+  white-space: break-spaces;
 }
 
 p.small {
@@ -922,6 +930,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     border-radius: 0px;
     margin-top: 0px;
     position: relative;
+    width: 100%;
   }
   .submenu ul > li, .under_submenu ul > li {
     padding-bottom: 0px;
@@ -4509,19 +4518,6 @@ svg {
   background-image: url(../images/vectors/Vector117.png);
 }
 
-.gallery-about-wrapper article .gallery-about-r:not(*:first-child) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .gallery-about-wrapper article, #navigationUnderGallery article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4532,7 +4528,7 @@ svg {
 }
 
 .gallery-about-wrapper article .gallery-about-l, .gallery-about-wrapper article .gallery-about-r, #navigationUnderGallery article .gallery-about-l, #navigationUnderGallery article .gallery-about-r {
-  height: 700px;
+  height: auto;
   width: 50%;
 }
 
@@ -4545,7 +4541,7 @@ svg {
 
 .gallery-about-wrapper article .gallery-about-r, #navigationUnderGallery article .gallery-about-r {
   background-color: #194A97;
-  padding: 120px 50px;
+  padding: 40px 50px 150px;
 }
 
 .gallery-about-wrapper article .gallery-about-r h2, #navigationUnderGallery article .gallery-about-r h2 {
@@ -4553,12 +4549,29 @@ svg {
 }
 
 .gallery-about-wrapper article .gallery-about-r h5, #navigationUnderGallery article .gallery-about-r h5 {
-  margin: 50px 0 10px;
+  margin: 0px 0 10px;
   color: #38C1BF;
 }
 
 .gallery-about-wrapper article .gallery-about-r h4, #navigationUnderGallery article .gallery-about-r h4 {
   color: #FFFFFF;
+  font-size: 16px;
+}
+
+.table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.table div {
+  width: 45%;
+  margin-top: 40px;
 }
 
 #navigationUnderGallery {
@@ -5031,11 +5044,6 @@ svg {
   background-image: url(../images/vectors/2.png);
 }
 
-.activeSlideGallery .gallery-about-r h2 {
-  position: absolute !important;
-  top: 20%;
-}
-
 @media screen and (max-width: 1230px) {
   .gallery-act article img {
     height: 103px;
@@ -5109,20 +5117,17 @@ svg {
     font-size: 15px;
   }
   .gallery-about-wrapper article .gallery-about-l, .gallery-about-wrapper article .gallery-about-r, #navigationUnderGallery article .gallery-about-l, #navigationUnderGallery article .gallery-about-r {
-    height: 513px;
+    height: auto;
   }
   .gallery-about-wrapper article .gallery-about-r, #navigationUnderGallery article .gallery-about-r {
-    padding: 40px 30px 0;
+    padding: 40px 30px 150px;
   }
   .gallery-about-wrapper article .gallery-about-r h2, #navigationUnderGallery article .gallery-about-r h2 {
     font-size: 30px;
   }
   .gallery-about-wrapper article .gallery-about-r h5, #navigationUnderGallery article .gallery-about-r h5 {
-    margin: 40px 0 10px;
+    margin: 0px 0 10px;
     font-size: 16px;
-  }
-  .gallery-about-wrapper article .gallery-about-r h4, #navigationUnderGallery article .gallery-about-r h4 {
-    font-size: 18px;
   }
   .reviews section {
     -webkit-box-orient: vertical;
@@ -5234,6 +5239,10 @@ svg {
   .activeSlideGallery .gallery-about-r h2 {
     top: 15%;
   }
+  .gallery-about-r {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
   .about-index-r {
     position: relative !important;
     margin: 0 auto !important;
@@ -5338,6 +5347,12 @@ svg {
   .act-f .nav-act {
     margin-bottom: 40px;
     margin-top: -30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .table div {
+    width: 100%;
   }
 }
 

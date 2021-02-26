@@ -323,19 +323,13 @@ svg{
     }
 }
 
-.gallery-about-wrapper article .gallery-about-r:not(*:first-child) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .gallery-about-wrapper, #navigationUnderGallery {
     article {
         display: flex;
         justify-content: space-between;
 
         .gallery-about-l, .gallery-about-r {
-            height: 700px;
+            height: auto;
             width: 50%;
         }
 
@@ -347,19 +341,31 @@ svg{
 
         .gallery-about-r {
             background-color: #194A97;
-            padding: 120px 50px;
+            padding: 40px 50px 150px;
 
             h2 {
                 color: #FFFFFF
             }
             h5 {
-                margin: 50px 0 10px;
+                margin: 0px 0 10px;
                 color: #38C1BF;
             }
             h4 {
-                color: #FFFFFF
+                color: #FFFFFF;
+                font-size: 16px;                
             }
         }
+    }
+}
+
+.table {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    div {
+        width: 45%;
+        margin-top: 40px;
     }
 }
 
@@ -797,11 +803,6 @@ svg{
     }
 }
 
-.activeSlideGallery .gallery-about-r h2 {
-    position: absolute !important;
-    top: 20%;
-}
-
 @media screen and (max-width: 1230px) {
     .gallery-act article img {
         height: 103px;
@@ -869,21 +870,19 @@ svg{
         article {
     
             .gallery-about-l, .gallery-about-r {
-                height: 513px;
+                height: auto;
             }
+
     
             .gallery-about-r {
-                padding: 40px 30px 0;
+                padding: 40px 30px 150px;
     
                 h2 {
                     font-size: 30px;
                 }
                 h5 {
-                    margin: 40px 0 10px;
+                    margin: 0px 0 10px;
                     font-size: 16px;
-                }
-                h4 {
-                    font-size: 18px;
                 }
             }
         }
@@ -1000,6 +999,10 @@ svg{
     .activeSlideGallery .gallery-about-r h2 {
         top: 15%;
     }
+    .gallery-about-r {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
     .about-index-r {
         position: relative !important;
         margin: 0 auto !important;
@@ -1097,7 +1100,14 @@ svg{
             margin-top: -30px;
         }
     }
+
 }
+
+@media screen and (max-width: 500px) {
+    .table div {
+        width: 100%;
+    }
+} 
 
 @media screen and (max-width: 360px) {
     .activeSlideGallery .gallery-about-r h2 {

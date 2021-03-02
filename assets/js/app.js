@@ -371,32 +371,4 @@ $(document).ready(function(){
     
     })
     
-    $('.gallery-act').owlCarousel({
-        nav:false,
-        dots:false,
-        responsive: {
-            0: {
-                items: 1,
-                margin: 10,
-                autoWidth: false
-            },
-            700: {
-                items: 2,
-                margin: 20,
-                autoWidth: false
-            },
-            1230: {
-                items: 3,
-                margin: 30,
-                autoWidth: true
-            }
-        }
-    })   
-    let elemL = document.getElementById('section').getBoundingClientRect().left
-    document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
-    $( window ).resize(function() {
-    let elemL = document.getElementById('section').getBoundingClientRect().left
-    document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
-    })
-    
 })

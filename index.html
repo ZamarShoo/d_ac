@@ -394,31 +394,31 @@
                 <img src="./assets/images/for-delete/Rectang6.png">
             </div>
             <div class="gallery-about-r">
-                <h2>Среди предлагаемых услуг отдельного внимания заслуживает:</h2>
+                <h2>Среди предлагаемых услуг<br> отдельного внимания<br> заслуживает:</h2>
                 <div class="table">
                         <div>
                             <h5>01.</h5>
-                            <h4>Комплексное обследование и полная диагностика ротовой полости с постановкой задач лечения</h4>
+                            <h4>Комплексное обследование и<br> полная диагностика ротовой<br> полости с постановкой задач<br> лечения</h4>
                         </div>
                         <div>
                             <h5>02.</h5>
-                            <h4>Терапевтическое направление лечения зубов</h4>
+                            <h4>Терапевтическое<br> направление лечения зубов</h4>
                         </div>
                         <div>
                             <h5>03.</h5>
-                            <h4>Мероприятия по отбеливанию</h4>
+                            <h4>Мероприятия по<br> отбеливанию</h4>
                         </div>
                         <div>
                             <h5>04.</h5>
-                            <h4>Современный подход к лечению корней зубов</h4>
+                            <h4>Современный подход к<br> лечению корней зубов</h4>
                         </div>
                         <div>
                             <h5>05.</h5>
-                            <h4>Современный подход к лечению корней зубов</h4>
+                            <h4>Профессиональная<br> реставрация</h4>
                         </div>
                         <div>
                             <h5>06.</h5>
-                            <h4>Профессиональная реставрация</h4>
+                            <h4>Профессиональная<br> реставрация</h4>
                         </div>
                     </div>
             </div>
@@ -428,32 +428,32 @@
                 <img src="./assets/images/for-delete/Rectang6.png">
             </div>
             <div class="gallery-about-r">
-                <h2>Среди предлагаемых услуг отдельного внимания заслуживает:</h2>
+                <h2>Среди предлагаемых услуг<br> отдельного внимания<br> заслуживает:</h2>
                 <div class="table">
-                        <div>
-                            <h5>07.</h5>
-                            <h4>Комплексное обследование и полная диагностика ротовой полости с постановкой задач лечения</h4>
-                        </div>
-                        <div>
-                            <h5>08.</h5>
-                            <h4>Терапевтическое направление лечения зубов</h4>
-                        </div>
-                        <div>
-                            <h5>09.</h5>
-                            <h4>Мероприятия по отбеливанию</h4>
-                        </div>
-                        <div>
-                            <h5>10.</h5>
-                            <h4>Современный подход к лечению корней зубов</h4>
-                        </div>
-                        <div>
-                            <h5>11.</h5>
-                            <h4>Современный подход к лечению корней зубов</h4>
-                        </div>
-                        <div>
-                            <h5>12.</h5>
-                            <h4>Профессиональная реставрация</h4>
-                        </div>
+                    <div>
+                        <h5>01.</h5>
+                        <h4>Комплексное обследование и<br> полная диагностика ротовой<br> полости с постановкой задач<br> лечения</h4>
+                    </div>
+                    <div>
+                        <h5>02.</h5>
+                        <h4>Терапевтическое<br> направление лечения зубов</h4>
+                    </div>
+                    <div>
+                        <h5>03.</h5>
+                        <h4>Мероприятия по<br> отбеливанию</h4>
+                    </div>
+                    <div>
+                        <h5>04.</h5>
+                        <h4>Современный подход к<br> лечению корней зубов</h4>
+                    </div>
+                    <div>
+                        <h5>05.</h5>
+                        <h4>Профессиональная<br> реставрация</h4>
+                    </div>
+                    <div>
+                        <h5>06.</h5>
+                        <h4>Профессиональная<br> реставрация</h4>
+                    </div>
                     </div>
             </div>
         </article>
@@ -776,6 +776,34 @@
     $('.service-elem>div').on('mouseout touchend', function() {
         $(this).parent().removeClass('service-elemActive')
     })
+    $('.gallery-act').owlCarousel({
+        nav:false,
+        dots:false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 10,
+                autoWidth: false
+            },
+            700: {
+                items: 2,
+                margin: 20,
+                autoWidth: false
+            },
+            1230: {
+                items: 3,
+                margin: 30,
+                autoWidth: true
+            }
+        }
+    })   
+
+        let elemL = document.getElementById('section').getBoundingClientRect().left
+        document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
+        $( window ).resize(function() {
+        let elemL = document.getElementById('section').getBoundingClientRect().left
+        document.getElementById('sectionG').style.marginLeft= `${elemL.toFixed(0)}px`
+        })
 </script>
 <script src="./assets/js/app.js"></script>
 </body>

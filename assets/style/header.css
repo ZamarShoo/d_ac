@@ -339,7 +339,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
 }
 
 .itemActive.menu::after {
-  content: url(../images/vectors/arrow-u.png);
+  content: url(../images/vectors/menu-a.svg);
 }
 
 .itemActive > .menu_item > a {
@@ -368,6 +368,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
   }
   .itemActive > .submenu, .itemActive > .submenu1 {
     display: block;
+    margin-top: 0px;
   }
   .submenu1 {
     display: none;
@@ -453,7 +454,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     padding: 15px 0 !important;
   }
   .menu::after {
-    content: url(../images/vectors/arrow-d.png);
+    content: url(../images/vectors/menu.svg);
     display: inline-block;
     position: absolute;
     background-size: 10px 5px;
@@ -463,6 +464,13 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     top: 15px;
     -webkit-transition: .3s;
     transition: .3s;
+    z-index: -1;
+  }
+  .submenu .menu_item {
+    padding: 7px 0 !important;
+  }
+  .submenu .menu:last-child .menu_item {
+    padding: 7px 0 15px !important;
   }
 }
 

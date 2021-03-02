@@ -838,7 +838,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
 }
 
 .itemActive.menu::after {
-  content: url(../images/vectors/arrow-u.png);
+  content: url(../images/vectors/menu-a.svg);
 }
 
 .itemActive > .menu_item > a {
@@ -867,6 +867,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
   }
   .itemActive > .submenu, .itemActive > .submenu1 {
     display: block;
+    margin-top: 0px;
   }
   .submenu1 {
     display: none;
@@ -952,7 +953,7 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     padding: 15px 0 !important;
   }
   .menu::after {
-    content: url(../images/vectors/arrow-d.png);
+    content: url(../images/vectors/menu.svg);
     display: inline-block;
     position: absolute;
     background-size: 10px 5px;
@@ -962,6 +963,13 @@ nav > ul > li a:hover, nav > ul > li a:focus {
     top: 15px;
     -webkit-transition: .3s;
     transition: .3s;
+    z-index: -1;
+  }
+  .submenu .menu_item {
+    padding: 7px 0 !important;
+  }
+  .submenu .menu:last-child .menu_item {
+    padding: 7px 0 15px !important;
   }
 }
 
@@ -4528,7 +4536,7 @@ svg {
 }
 
 .gallery-about-wrapper article .gallery-about-l, .gallery-about-wrapper article .gallery-about-r, #navigationUnderGallery article .gallery-about-l, #navigationUnderGallery article .gallery-about-r {
-  height: auto;
+  height: 750px;
   width: 50%;
 }
 
@@ -4567,6 +4575,7 @@ svg {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 80%;
 }
 
 .table div {
@@ -5044,6 +5053,12 @@ svg {
   background-image: url(../images/vectors/2.png);
 }
 
+@media screen and (max-width: 1700px) {
+  .gallery-about-wrapper article .gallery-about-l, .gallery-about-wrapper article .gallery-about-r {
+    height: 750px;
+  }
+}
+
 @media screen and (max-width: 1230px) {
   .gallery-act article img {
     height: 103px;
@@ -5062,6 +5077,9 @@ svg {
 }
 
 @media screen and (max-width: 1150px) {
+  .gallery-about-wrapper article .gallery-about-r h2 br {
+    display: none;
+  }
   .about-index .about-index-r {
     top: 100px;
     right: -310px;
@@ -5100,6 +5118,12 @@ svg {
     max-width: 300px;
     margin: 40px auto 0;
     padding-left: 0;
+  }
+  .table {
+    width: 100%;
+  }
+  .table br {
+    display: none;
   }
 }
 
@@ -5233,6 +5257,25 @@ svg {
   .activeSlideGallery .gallery-about-r h2 {
     top: 7%;
   }
+  .gallery-about-wrapper article, #navigationUnderGallery article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gallery-about-wrapper article .gallery-about-l, .gallery-about-wrapper article .gallery-about-r,
+  #navigationUnderGallery article .gallery-about-l, #navigationUnderGallery article .gallery-about-r {
+    width: 100%;
+  }
+  .gallery-about-wrapper article .gallery-about-l {
+    height: 480px;
+  }
+  #navigationUnderGallery article .gallery-about-r {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    position: absolute;
+    margin-top: -100px !important;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -5269,24 +5312,8 @@ svg {
     text-align: center;
     width: 75%;
   }
-  .gallery-about-wrapper article, #navigationUnderGallery article {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .gallery-about-wrapper article .gallery-about-l, .gallery-about-wrapper article .gallery-about-r,
-  #navigationUnderGallery article .gallery-about-l, #navigationUnderGallery article .gallery-about-r {
-    width: 100%;
-  }
   .gallery-about-wrapper article .gallery-about-l {
     height: 320px;
-  }
-  #navigationUnderGallery article .gallery-about-r {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    position: absolute;
-    margin-top: -100px !important;
   }
   .under-gallery-l {
     -webkit-box-orient: vertical;
@@ -5359,6 +5386,12 @@ svg {
 @media screen and (max-width: 360px) {
   .activeSlideGallery .gallery-about-r h2 {
     top: 5%;
+  }
+  .numbers {
+    width: 105vw;
+  }
+  .first-slide-index, .first-slide-elem {
+    height: 76vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
